@@ -9,12 +9,36 @@ div {
     padding-left: 10px;
 }
 
-p, li {
+p, li, dl {
     color: rgb(250, 250, 250);
     font-size: 15px;
     padding-top: 1px;
     padding-bottom: 1px;
     font-family: Tahoma;
+}
+
+/* ol {
+    list-style: none;
+    counter-reset: line 5;
+}
+
+ol>li:before {
+    counter-increment: line -1;
+    content: counter(line) ". ";
+} */
+
+dl {
+    font-size: 12px;
+    padding-top: 0px;
+}
+
+dd {
+    font-weight: lighter;
+}
+
+dt {
+    color: rgb(249, 237, 125);
+    font-weight: bold;
 }
 
 hr {
@@ -25,6 +49,11 @@ hr {
 
 a {
     color: rgb(200, 74, 74);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 #movieTips {
@@ -48,5 +77,14 @@ a {
 }
 
 .myCharacter {
-    color: rgb(249, 237, 125);
+    color: rgb(249, 237, 125);  
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); 
+}
+
+p.paragraph:first-letter, p#movieTips::first-letter {
+    font-size: 150%;
 }
