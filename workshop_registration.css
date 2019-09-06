@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+#mainScreen {
+    background-color: rgb(170, 202, 189);
+    box-sizing: border-box;
+    margin: 5% auto;
+    width: 80%;
+}
+
+#contentScreen {
+    margin: 0px 2px 0px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 500px;
+}
+
+p#headArea {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0px 10px 10px;
+    margin: 0px;
+}
+
+#footArea {
+    background-color: rgb(227, 227, 227);
+    padding: 10px;
+    margin: -5px 2px 10px;
+}
+
+p#footArea > input {
+    background-color: rgb(131, 167, 152);
+    color: white;
+    border-style: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.titleParagraph {
+    text-decoration: underline;
+    padding: 20px 20px 0px 10px;
+    margin: 0px 0px 15px 0px;
+}
+
+.formContent {
+    font-weight: bold;
+    font-size: 13px;
+    width: 300px;
+    padding: 7.5px 10px 7.5px 10px;
+    line-height: 20px;
+    height: 20px;
+    margin: 5px 0px 5px 0px;
+}
+
+#registerView, #LunchView, #PaymentView {
+    height: auto;
+}
+
+label {
+    display:inline-block;
+}
+
+.star {
+    color: red;
+}
+
+input[type="text"] {
+    float: right;
+    width: auto;
+}
+
+textarea {
+    float: right;
+    width: 100px;
+}
