@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="description" content="This is Home page of Damon's WAP Labs" />
+        <meta name="keywords" content="WAP, Damon Gao" />
+        <script>
+            /* runs test to see if expected argument is === to value returned by function2test argument */
+            function myFunctionTest(expected, function2test) {
+                let result = function2test();
+
+                if(Array.isArray(expected)){
+                    expected = expected.toString();
+                }
+                if(Array.isArray(result)){
+                    result = result.toString();
+                }
+                if (expected === result) {
+                    return "TEST SUCCEEDED";
+                } else {
+                    return "TEST FAILED.  Expected " + expected + " found " + function2test();
+                }
+            }
+
+            console.log("Expected output of max(5, 8) is 8  " + myFunctionTest(8, function() {
+                return max(5,8);
+            }));
+            console.log("Expected output of maxOfThree(5, 10, 8) is 10  " + myFunctionTest(10, function() {
+                return maxOfThree(5,10,8);
+            }));
+            console.log("Expected output of isVowel('B') is false  " + myFunctionTest(false, function() {
+                return isVowel('B');
+            }));
+            console.log("Expected output of sum([1,2,3,4]) is 10  " + myFunctionTest(10, function() {
+                return sum([1,2,3,4]);
+            }));
+            console.log("Expected output of multiply([1,2,3,4]) is 24  " + myFunctionTest(24, function() {
+                return multiply([1,2,3,4]);
+            }));
+            console.log("Expected output of reverse('jag testar') is 'ratset gaj'  " + myFunctionTest('ratset gaj', function() {
+                return reverse("jag testar");
+            }));
+            console.log("Expected output of findLongestWord(['hello','world!','Damon Gao','learn JS']) is 'Damon Gao'  " + myFunctionTest('Damon Gao', function() {
+                return findLongestWord(['hello','world!','Damon Gao','learn JS']);
+            }));
+            console.log("Expected output of filterLongWords(['hello','world!','Damon Gao','learn JS'], 6) is ['Damon Gao','learn JS']  " + myFunctionTest(['Damon Gao','learn JS'], function() {
+                return filterLongWords(['hello','world!','Damon Gao','learn JS'], 6);
+            }));
+    
+            function max(num1, num2) {
+                if (num1 > num2) {
+                    return num1;
+                } else {
+                    return num2;
+                }
+            }
+
+            function maxOfThree(num1, num2, num3) {
+                let temp = num1 > num2 ? num1 : num2;
+                return temp > num3 ? temp: num3;
+            }
+
+            function isVowel(char) {
+                // Method1.
+                // var pattern = /(a|e|i|o|u)/i; // last i is ignore Upper/Lower case
+                // return pattern.test(char);
+
+                // Method2.
+                var vowels = ['a','e','i','o','u','A','E','I','O','U'];
+                if (vowels.indexOf(char) > -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function sum(arr) {
+                var s = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    s += arr[i];
+                }
+                return s;
+            }
+
+            function multiply(arr) {
+                var result = 1;
+                arr.forEach(function(val, idx, arr){
+                    result *= val;
+                }, 0);
+                return result;
+            }
+
+            function reverse(str) {
+                return str.split("").reverse().join("");
+            }
+
+            function findLongestWord(arr) {
+                if (arr.length == 0) return null;
+                if (arr.length == 1) return arr[0];
+                var temp = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (temp.length < arr[i].length) {
+                        temp = arr[i];
+                    }
+                }
+                return temp;
+            }
+
+            function filterLongWords(arr, i) {
+                var result = [];
+                arr.forEach(function(val, idx, arr){
+                    if (val.length > i) {
+                        result.push(val);
+                    }
+                }, 0)
+                return result;
+            }
+
+            const a = [1,3,5,3,3]; 
+            const b = a.map(function(elem, i, array) {
+                return elem * 10;
+            });
+            console.log(b);
+            const c = a.filter(function(elem, i, array){
+                return elem == 3;
+            });
+            console.log(c);
+            const d = a.reduce(function(prevValue, elem, i, array){
+                return prevValue + elem;
+            });
+            console.log(d);
+
+            const d2 = a.find(function(elem) {return elem > 1;}); //3
+            const d3 = a.findIndex(function(elem) {return elem > 1;}); //1
+            console.log(d2);
+            console.log(d3);
+            
+        </script>
+        <title>
+            JS Introduction - Damon Gao
+        </title>
+    </head>
+    <body>
+        
+    </body>
+</html>
