@@ -56,11 +56,11 @@
                     </div>
                     <div class="formContent">
                         <label>Email<span class="star"> *</span></label>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" pattern="[a-z0-9._+\-]+@[a-z0-9.\-]+\.[a-z]{2,3}" >
                     </div>
                     <div class="formContent">
                         <label>Phone Number<span class="star"> *</span></label>
-                        <input type="text" name="phone" />
+                        <input type="text" name="phone" pattern="[1-9][0-9]{10,11}" >
                     </div>
                 </div>
                 <div id="LunchView">
@@ -98,7 +98,7 @@
             </div>
             <p id="footArea">
                 <input type="button" value="Submit" />
-                <input type="button" value="Reset" />
+                <input type="button" value="Reset" onclick="window.location.reload();"/>
             </p>
         </form>
 
