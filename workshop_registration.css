@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     overflow: hidden;
-    height: 500px;
+    height: 450px;
 }
 
 p#headArea {
@@ -32,7 +32,8 @@ p#headArea {
 #footArea {
     background-color: rgb(227, 227, 227);
     padding: 10px;
-    margin: -5px 2px 10px;
+    margin: 0px 2px 10px;
+    text-align: center;
 }
 
 p#footArea > input {
@@ -41,23 +42,46 @@ p#footArea > input {
     border-style: none;
     font-size: 14px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 6px 20px;
 }
 
-.titleParagraph {
+.titleParagraph, .titleHeader  {
     text-decoration: underline;
-    padding: 20px 20px 0px 10px;
+    padding: 0px 20px 0px 10px;
     margin: 0px 0px 15px 0px;
+    font-size: 15px;
+}
+
+.titleHeader {
+    padding: 20px 10px;
+    background-color: white;
+    margin: 0px 2px 0px 2px;
 }
 
 .formContent {
     font-weight: bold;
     font-size: 13px;
-    width: 300px;
-    padding: 7.5px 10px 7.5px 10px;
+    width: 340px;
+    padding: 7.5px 5px 7.5px 10px;
     line-height: 20px;
     height: 20px;
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
+    clear: both;
+}
+
+.formContent>select {
+    float: right;
+    width: 166px;
+    margin: 0px;
+    border: solid 1px rgb(223, 223, 223);
+    border-radius: 0em;
+    background-color: white;
+}
+
+.paymentMode {
+    float: right;
+    width: 166px;
+    font-weight: normal;
 }
 
 #registerView, #LunchView, #PaymentView {
@@ -72,12 +96,24 @@ label {
     color: red;
 }
 
+.moreAction {
+    -webkit-appearance: none;
+    border: 0px;
+    width: 95px;
+    background-color: rgb(170, 202, 189);
+    margin: 0px 0px 0px 40px;
+    background: url("images/select.png") no-repeat right center;
+    background-size: 20px;
+}
+
 input[type="text"] {
     float: right;
-    width: auto;
+    width: 160px;
 }
 
 textarea {
+    resize: none;
+    border:1px solid rgb(223, 223, 223);
     float: right;
-    width: 100px;
+    width: 160px;
 }

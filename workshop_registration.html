@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="This is About Me page of Damon's WAP Labs" />
-        <meta name="keywords" content="WAP, Damon Gao" />
-        <link href="workshop_registration.css" type="text/css" rel="stylesheet">
-        <title>
-            About Me - Damon Gao
-        </title>
-    </head>
-    <body>
-        <div id="mainScreen">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is About Me page of Damon's WAP Labs" />
+    <meta name="keywords" content="WAP, Damon Gao" />
+    <link href="workshop_registration.css" type="text/css" rel="stylesheet">
+    <title>
+        About Me - Damon Gao
+    </title>
+</head>
+
+<body>
+    <div id="mainScreen">
+        <form action="" method="POST">
             <p id="headArea">Workshop Registration
-                <select name="moreAction">
+                <select name="moreAction" class="moreAction">
                     <option>More Actions</option>
-                </select>                
+                </select>
             </p>
+            <p class="titleHeader">Register now while seats are available!</p>
             <div id="contentScreen">
                 <div id="registerView">
-                    <p class="titleParagraph">Register now while seats are available!</p>
                     <div class="formContent">
                         <label>First Name<span class="star"> *</span></label>
                         <input type="text" name="firstName" />
@@ -41,11 +44,15 @@
                     </div>
                     <div class="formContent">
                         <label>State/Province/Region</label>
-                        <input type="text" name="state" />
+                        <select name="state">
+                            <option value="none">-Select-</option>
+                        </select>
                     </div>
                     <div class="formContent">
                         <label>Country</label>
-                        <input type="text" name="country" />
+                        <select name="country">
+                            <option value="none">-Select-</option>
+                        </select>
                     </div>
                     <div class="formContent">
                         <label>Email<span class="star"> *</span></label>
@@ -60,14 +67,20 @@
                     <p class="titleParagraph">Lunch</p>
                     <div class="formContent">
                         <label>Meal Preference</label>
-                        <input type="text" name="meal" />
+                        <select name="meal">
+                            <option value="vegetarian">Vegetarian</option>
+                        </select>
                     </div>
                 </div>
                 <div id="PaymentView">
                     <p class="titleParagraph">Payment Details</p>
                     <div class="formContent">
                         <label>Payment Mode</label>
-                        <input type="text" name="payment" />
+                        <div class="paymentMode">
+                            <input type="checkbox" name="payment1" value="cash" /> Cash<br />
+                            <input type="checkbox" name="payment2" value="cheque" /> Cheque<br />
+                            <input type="checkbox" name="payment3" value="draft" /> Demand Draft
+                        </div>
                     </div>
                     <div class="formContent">
                         <label>DD/Cheque No.</label>
@@ -87,6 +100,9 @@
                 <input type="button" value="Submit" />
                 <input type="button" value="Reset" />
             </p>
-        </div>
-    </body>
+        </form>
+
+    </div>
+</body>
+
 </html>
