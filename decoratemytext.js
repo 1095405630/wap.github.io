@@ -55,3 +55,28 @@ function pigLatin() {
     var finalText = finalArr.join(' ');
     document.getElementById('textArea').innerHTML = finalText;
 }
+
+function changeWords() {
+    var text = document.getElementById('textArea').innerHTML;
+    var textArr = text.split(' ');
+    var replaceArr = [];
+    for (let i = 0; i < textArr.length; i++) {
+        if (checkWords(textArr[i]).length >= 5) {
+            replaceArr.push(textArr[i]);
+        }
+    }
+    for (let i = 0; i < replaceArr.length; i++) {
+        text = text.replace(replaceArr[i], 'Malkovich');
+    }
+    document.getElementById("textArea").innerHTML = text;
+}
+
+function checkWords(str) {
+    if (str.length == 0) return '';
+    var temp = str.replace('\t\t', '');
+    temp = temp.replace(' ', '');
+    if (temp.length == 0) return '';
+    if (/^[a-zA-Z]+$/.test(temp) == false) return '';
+    if (typeof(str) === 'number' && !isNaN(str)) return '';
+    return str;
+}
